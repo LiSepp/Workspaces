@@ -1,0 +1,48 @@
+package 包名
+package myp; //创造了一个名为myp的包
+/*
+package test;
+class Student
+{
+	public static void main(String args[])
+	{
+		System.out.println("This is ``````");
+	}
+}
+*/
+文件名为Student.java,把它存放在test目录中，编译文件，确定文件Student.class同在test目录中。然后用下列命令行执行
+java test.Student
+执行该命令时必须在test的上级目录，或者把类路径环境变量设置成合适值。
+Student此时是test包的一部分，它不能自己执行，即不能用下面的命令行：
+java Student
+Student必须和它的包名一起使用
+
+引用包
+import pkg1[.pkg2].(classname|*);
+这里pkg1是顶层包名，pkg2是外在包中用 . 隔离的下级包名。可以制定一个星号 * 引入整个包
+
+import java.util.Date;
+import java.io.*;
+有import语句的示例
+/*
+import java.util.*
+class MyDate extends Date
+{
+	...
+}
+
+*/
+没有import语句的例子
+/*
+class MyDate extends java.util.Date
+{
+	...
+}
+
+
+包的编译
+javac -d 包存放的目录文件名.java
+-d后面跟点号代表当前目录
+
+javac -d c:\mypack mydemo.java
+
